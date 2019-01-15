@@ -42,8 +42,8 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-[alt text]: ./output_images/dataset.png
-[alt text]: ./output_images/traindata.png
+![alt text](./output_images/dataset.png)
+![alt text](./output_images/traindata.png)
 [alt text]: ./output_images/validdata.png
 [alt text]: ./output_images/testdata.png
 
@@ -61,9 +61,11 @@ And I decided to generate additional data because the data set was uneven.
 
 To add more data to the the data set, I used the following techniques because it makes the network be able to learn the universal characteristics that can cope with rotation and displacement.
 
-    (1)rotation
-    (2)parallel displacement
-    (3)brighness shift
+(1)rotation
+
+(2)parallel displacement
+
+(3)brighness shift
 
 Here is an example of an original image and an augmented image:
 
@@ -108,10 +110,15 @@ My final model consisted of the following layers:
 To train the model, I used an ....
 
 (1)Optimizer: Adam
+
 (2)Batch size: 128
+
 (3)Number of epochs: 100
+
 (4)Lerning Rate: 0.001
+
 (5)Rate of Dropout: 0.5
+
 (6)Loss: Cross Entropy + L2 Regularization
 
 
