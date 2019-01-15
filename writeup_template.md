@@ -44,8 +44,8 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 ![alt text](./output_images/dataset.png)
 ![alt text](./output_images/traindata.png)
-[alt text]: ./output_images/validdata.png
-[alt text]: ./output_images/testdata.png
+![alt text](./output_images/validdata.png)
+![alt text](./output_images/testdata.png)
 
 ### Design and Test a Model Architecture
 
@@ -55,7 +55,7 @@ As a first step, I decided to convert the images to normalized grayscale because
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-[alt text]: ./output_images/norm_gray.png
+![alt text](./output_images/norm_gray.png)
 
 And I decided to generate additional data because the data set was uneven.
 
@@ -69,12 +69,12 @@ To add more data to the the data set, I used the following techniques because it
 
 Here is an example of an original image and an augmented image:
 
-[alt text]: ./output_images/augmentation.png
+![alt text](./output_images/augmentation.png)
 
 The difference between the original data set and the augmented data set is the following ... 
 
-[alt text]: ./output_images/dataset.png
-[alt text]: ./output_images/traindata_aug.png
+![alt text](./output_images/dataset.png)
+![alt text](./output_images/traindata_aug.png)
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -148,7 +148,7 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-[alt text]: ./output_images/webimg.png
+![alt text](./output_images/webimg.png)
 
 The first image might be difficult to classify because ...
 
@@ -167,8 +167,8 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
-[alt text]: ./output_images/norm_gray.png
-[alt text]: ./output_images/webimg_prd.png
+![alt text](./output_images/norm_gray.png)
+![alt text](./output_images/webimg_prd.png)
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -187,11 +187,11 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 For the second image ... 
 
-[alt text]: ./output_images/norm_gray.png
-[alt text]: ./output_images/webimg_prd.png
+![alt text](./output_images/norm_gray.png)
+![alt text](./output_images/webimg_prd.png)
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
-[alt text]: ./output_images/conv2.png
+![alt text](/output_images/conv2.png)
