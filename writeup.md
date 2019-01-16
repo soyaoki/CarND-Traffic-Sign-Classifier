@@ -73,7 +73,6 @@ Here is an example of an original image and an augmented image:
 
 The difference between the original data set and the augmented data set is the following ... 
 
-![alt text](./output_images/dataset.png)
 ![alt text](./output_images/traindata_aug.png)
 
 
@@ -163,7 +162,7 @@ And Confusion matrix of test dataset is shown below.
 17 (No entry) was classified as 40 (Roundabout mandatory): 18 times(why? I don't think these looks like each other...)
 These traffic sign looks like each other. So it might be so difficult to classify these traffic sign. To classify these correctly, we need images which have more high resolution.
 
-![alt text](./output_images/confusionmat.png)
+![alt text](./output_images/confusionmat_saved_myself.png)
 ![alt text](./output_images/norm_gray.png)
 
 ### Test a Model on New Images
@@ -194,8 +193,6 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
 
-![alt text](./output_images/norm_gray.png)
-![alt text](./output_images/webimg_prd.png)
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -203,7 +200,7 @@ The code for making predictions on my final model is located in the 28th cell of
 
 Result is shown following image.
 
-![alt text](./output_images/norm_gray.png)
+![alt text](./output_images/dataset.png)
 ![alt text](./output_images/webimg_prd.png)
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
@@ -211,4 +208,4 @@ Result is shown following image.
 
 The code is located in the 30th cell of the Ipython notebook. We can find feature map which react edges.
 
-![alt text](/output_images/conv2.png)
+![alt text](/output_images/conv2_saved_myself.png)
