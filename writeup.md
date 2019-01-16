@@ -125,22 +125,46 @@ To train the model, I used an ....
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ? --->
-* validation set accuracy of ? --->
-* test set accuracy of ? --->
+* training set accuracy of ? ---> 0.984
+* validation set accuracy of ? ---> 0.960
+* test set accuracy of ? ---> 0.943
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
+* What was the first architecture that was tried and why was it chosen? 
+
+---> I chosed LeNet. Because it was recommended as a base model. (Now, I just knew there were aonother choise...)
+
+* What were some problems with the initial architecture? 
+
+---> Accuracy was not over 0.93. 
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+
+---> To train better model, I implemented "1x1 convolution", "Drop out", "Leaky ReLU" and "L2 regularization".
+(1) 1x1 convolution was implemented for model to learn more better feature.
+(2) Leaky Relu was implemented for model to progress training.
+(3) Dropout and L2 regularization were implemented to adjust overfitting.
+
 * Which parameters were tuned? How were they adjusted and why?
+
+---> I tuned "Epochs" for getting better model. I thought there was still room for growth. So I tried more iteration of training(optimise params). I think It was trade-off between epochs and learning rate.
+
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+---> First convolution layer has 5x5 kernel. this size might be proper to extract some features like edges, brightness. And 1x1 convolution layer might help the model to extract more features. Dropout might adjust overfitting.
+
+To improve the model, I will put 1x1 convolution layer as first layer. It might help extracting more features.
+And I will turn kernel' size of second convolution layer. I setted 5x5 kernel in all convolution layer. It might help extracting more features too.
+
+*Confusion matrix and Consideration
+And Confusion matrix of test dataset is shown below. 
+3 (Speed limit (50km/h)) was classified as 5 (Speed limit (80km/h)): 28 times
+27 (Pedestrians) was classified as 29 (Bycycles crossing): 24 times
+41 (End of no passing) was classified as 9 (No passing): 19 times
+17 (No entry) was classified as 40 (Roundabout mandatory): 18 times(why? I don't think these looks like each other...)
+These traffic sign looks like each other. So it might be so difficult to classify these traffic sign. To classify these correctly, we need images which have more high resolution.
+
+![alt text](./output_images/confusionmat.png)
+![alt text](./output_images/norm_gray.png)
 
 ### Test a Model on New Images
 
@@ -150,7 +174,7 @@ Here are five German traffic signs that I found on the web:
 
 ![alt text](./output_images/webimg.png)
 
-The first image might be difficult to classify because ...
+The images of "Road Work" and "Right-of-way at the next intersection" might be difficult to classify because these looked like each other.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -158,34 +182,26 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| 18 (General Caution)      		| 18 (General Caution)   									| 
+| 34 (Turn left ahead)     			| 34 (Turn left ahead) 										|
+| 3 (Speed limit (60km/h))					| 3 (Speed limit (60km/h))										|
+| 1 (Speed limit (30km/h))	      		| 1 (Speed limit (30km/h))					 				|
+| 25 (Road Work)			| 25 (Road Work)							|
+| 12 (Priority road)			| 12 (Priority road)							|
+| 11 (Right-of-way at the next intersection)			|  11 (Right-of-way at the next intersection)							|
+| 38 (Keep right)			| 38 (Keep right)      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
 
 ![alt text](./output_images/norm_gray.png)
 ![alt text](./output_images/webimg_prd.png)
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 28th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
+Result is shown following image.
 
 ![alt text](./output_images/norm_gray.png)
 ![alt text](./output_images/webimg_prd.png)
@@ -193,5 +209,6 @@ For the second image ...
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
+The code is located in the 30th cell of the Ipython notebook. We can find feature map which react edges.
 
 ![alt text](/output_images/conv2.png)
