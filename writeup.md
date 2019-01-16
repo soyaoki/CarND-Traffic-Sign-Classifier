@@ -154,13 +154,18 @@ My final model results were:
 To improve the model, I will put 1x1 convolution layer as first layer. It might help extracting more features.
 And I will turn kernel' size of second convolution layer. I setted 5x5 kernel in all convolution layer. It might help extracting more features too.
 
-*Confusion matrix and Consideration
+* Confusion matrix and Consideration
 
-Confusion matrix of test dataset is shown below. 
+---> Confusion matrix of test dataset is shown below. 
+
 3 (Speed limit (50km/h)) was classified as 5 (Speed limit (80km/h)): 28 times
+
 27 (Pedestrians) was classified as 29 (Bycycles crossing): 24 times
+
 41 (End of no passing) was classified as 9 (No passing): 19 times
+
 17 (No entry) was classified as 40 (Roundabout mandatory): 18 times(why? I don't think these looks like each other...)
+
 These traffic sign looks like each other. So it might be so difficult to classify these traffic sign. To classify these correctly, we need images which have more high resolution.
 
 ![alt text](./output_images/confusionmat_saved_myself.png)
