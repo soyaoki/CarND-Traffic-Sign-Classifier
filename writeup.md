@@ -155,7 +155,8 @@ To improve the model, I will put 1x1 convolution layer as first layer. It might 
 And I will turn kernel' size of second convolution layer. I setted 5x5 kernel in all convolution layer. It might help extracting more features too.
 
 *Confusion matrix and Consideration
-And Confusion matrix of test dataset is shown below. 
+
+Confusion matrix of test dataset is shown below. 
 3 (Speed limit (50km/h)) was classified as 5 (Speed limit (80km/h)): 28 times
 27 (Pedestrians) was classified as 29 (Bycycles crossing): 24 times
 41 (End of no passing) was classified as 9 (No passing): 19 times
@@ -200,8 +201,8 @@ The code for making predictions on my final model is located in the 28th cell of
 
 Result is shown following image.
 
-![alt text](./output_images/dataset.png)
 ![alt text](./output_images/webimg_prd.png)
+![alt text](./output_images/dataset.png)
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
